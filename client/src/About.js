@@ -1,20 +1,27 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import AboutStyles from "./About.styled";
 const About = () => {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState({});
+
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get("/api/data");
-        setData(response.data);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-    fetchData();
+    fetch("/api/about")
+      .then((res) => res.json())
+      .then((data) => setData(data));
   }, []);
 
-  return <div> {data ? <p>{data.message}</p> : <p>Loading data...</p>} </div>;
+  return (
+    <AboutStyles>
+      {" "}
+      {data ? (
+        <>
+          <h1>{data.headline}</h1>
+          <p>{data.message}</p>
+        </>
+      ) : (
+        <p>Loading data...</p>
+      )}{" "}
+    </AboutStyles>
+  );
 };
 
 export default About;
