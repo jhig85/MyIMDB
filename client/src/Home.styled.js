@@ -1,8 +1,26 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const HomeStyles = styled.div`
-  max-width: 90%;
-  margin: 10px auto;
+  margin: 0 auto;
+
+  .content-search-bar-container {
+    background-color: #f1f0ef;
+    padding: 100px 0;
+
+    h1 {
+      font-size: 72px;
+      max-width: 50%;
+      margin: 10px auto;
+      color: #333;
+    }
+
+    p {
+      max-width: 50%;
+      margin: 0 auto 60px;
+      color: #333;
+      font-size: 16px;
+    }
+  }
   button {
     outline: none;
     border: none;
@@ -21,19 +39,25 @@ const HomeStyles = styled.div`
     }
   }
 
-  .movie-list {
+  .search-bar-container {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    width: 50%;
+    min-width: 350px;
     display: flex;
-    justify-content: space-between;
-    margin: 50px auto;
-    flex-wrap: wrap;
-    max-width: 1200px;
+    justify-content: center;
+    gap: 0.5em;
+    align-items: center;
+    margin: 0 auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 
-    .movie {
-      width: 30%;
-      border: 1px solid #999;
-      padding: 25px;
-      margin: 0 0 30px 0;
-      box-sizing: border-box;
+    input {
+      width: 100%;
+      border: none;
+      z-index: 1;
+      outline: none;
     }
   }
 `;

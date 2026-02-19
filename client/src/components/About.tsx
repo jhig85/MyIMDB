@@ -1,17 +1,23 @@
-import React, { useEffect, useState } from "react";
-import AboutStyles from "./About.styled";
+import React, { useEffect, useState } from 'react';
+import AboutStyles from './About.styled';
+
+interface AboutProps {
+  headline?: string;
+  message?: string;
+}
+
 const About = () => {
-  const [data, setData] = useState({});
+  const [data, setData] = useState<AboutProps>({});
 
   useEffect(() => {
-    fetch("/api/about")
+    fetch('/api/about')
       .then((res) => res.json())
       .then((data) => setData(data));
   }, []);
 
   return (
     <AboutStyles>
-      {" "}
+      {' '}
       {data ? (
         <>
           <h1>{data.headline}</h1>
@@ -19,7 +25,7 @@ const About = () => {
         </>
       ) : (
         <p>Loading data...</p>
-      )}{" "}
+      )}{' '}
     </AboutStyles>
   );
 };
