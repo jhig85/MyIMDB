@@ -6,9 +6,13 @@ jobs:
   build:
     runs-on: ubuntu-latest # Specifies the runner environment
 
+    defaults:
+      run:
+        working-directory: client # Sets the working directory for all run steps
+
     strategy:
       matrix:
-        node-version: [20.x] # Tests across Node.js version 20
+        node-version: [16.x, 18.x, 20.x] # Tests across multiple Node.js versions
 
     steps:
       - name: Checkout code
