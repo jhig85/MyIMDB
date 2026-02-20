@@ -21,7 +21,7 @@ function TVShows(props: any) {
       });
     } else {
       get(`/api/tvShowlist`).then((data) => {
-        setTvShowList(data.results);
+        setTvShowList(data?.results);
       });
     }
   }, [props.searchInput]);

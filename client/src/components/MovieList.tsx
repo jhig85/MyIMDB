@@ -18,11 +18,11 @@ function MovieList(props: any) {
   useEffect(() => {
     if (props.searchInput.length > 0) {
       get(`/api/movieSearch?query=${props.searchInput}`).then((data) => {
-        setMovieList(data.response.results);
+        setMovieList(data?.response?.results);
       });
     } else {
       get(`/api/movieList`).then((data) => {
-        setMovieList(data.results);
+        setMovieList(data?.results);
       });
     }
   }, [props.searchInput]);

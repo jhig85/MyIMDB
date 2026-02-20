@@ -1,6 +1,9 @@
 {
   "compilerOptions": {
     /* Visit https://aka.ms/tsconfig to read more about this file */
+    "moduleResolution": "node",
+
+    "types": ["jest", "node", "@testing-library/jest-dom"],
 
     /* Language and Environment */
     "target": "es2016" /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */ /* Specify a set of bundled library declaration files that describe the target runtime environment. */,
@@ -22,7 +25,7 @@
 
     /* Completeness */ "skipLibCheck": true /* Skip type checking all .d.ts files. */
   },
-  "include": ["src", "src/declaration.d.ts"],
+  "include": ["src", "src/declaration.d.ts", "./setupTests.ts", "__mocks__", "__tests__"],
   "exclude": [
     "./plugins/**/*",
     "./typings/**/*",
