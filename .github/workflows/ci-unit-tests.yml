@@ -8,7 +8,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: client # Sets the working directory for all run steps
+        working-directory: ./client # Sets the working directory for all run steps
 
     strategy:
       matrix:
