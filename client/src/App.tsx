@@ -5,7 +5,7 @@ import TVShows from './components/TvShows/TvShows';
 import Actors from './components/Actors/Actors';
 import About from './components/About';
 import Header from './Header';
-import Footer from './components/Footer';
+import Footer from './Footer';
 
 function App() {
   return (

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import StyledFooter from '../Footer.styled';
-import HMDBLogo from '../images/hmdb-logo.png';
+import StyledFooter from './Footer.styled';
+import HMDBLogo from './images/hmdb-logo.png';
 
 const Footer = () => {
   return (

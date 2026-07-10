@@ -15,7 +15,7 @@ function TVShows(props: any) {
   const [initialTvShows, setInitialTvShows] = useState<number>(6);
 
   useEffect(() => {
-    if (props.searchInput.length > 0) {
+    if (props.searchInput?.length > 0) {
       get(`/api/tvShowSearch?query=${props.searchInput}`).then((data) => {
         setTvShowList(data.response.results);
       });

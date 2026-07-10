@@ -1,8 +1,8 @@
-import Footer from '../src/components/Footer'
-import { render } from '@testing-library/react'
-import { MemoryRouter } from 'react-router-dom'
-import '@testing-library/jest-dom'
-import 'jest-styled-components'
+import Footer from '../src/Footer';
+import { render } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
+import '@testing-library/jest-dom';
+import 'jest-styled-components';
 
 describe('Footer component', () => {
   it('renders the logo and navigation links', () => {
@@ -10,21 +10,21 @@ describe('Footer component', () => {
       <MemoryRouter>
         <Footer />
       </MemoryRouter>
-    )
+    );
 
     // Check if the logo is rendered
-    const logo = getByAltText('Higgy"s Movie Database')
-    expect(logo).toBeInTheDocument()
+    const logo = getByAltText('Higgy"s Movie Database');
+    expect(logo).toBeInTheDocument();
 
     // Check if navigation links are rendered
-    const homeLink = getByText('Home')
-    const tvShowsLink = getByText('TV Shows')
-    const actorsLink = getByText('Actors')
-    const aboutLink = getByText('About')
+    const homeLink = getByText('Home');
+    const tvShowsLink = getByText('TV Shows');
+    const actorsLink = getByText('Actors');
+    const aboutLink = getByText('About');
 
-    expect(homeLink).toBeInTheDocument()
-    expect(tvShowsLink).toBeInTheDocument()
-    expect(actorsLink).toBeInTheDocument()
-    expect(aboutLink).toBeInTheDocument()
-  })
-})
+    expect(homeLink).toBeInTheDocument();
+    expect(tvShowsLink).toBeInTheDocument();
+    expect(actorsLink).toBeInTheDocument();
+    expect(aboutLink).toBeInTheDocument();
+  });
+});
