@@ -30,7 +30,7 @@ function TVShows(props: any) {
     if (props.searchInput === '') {
       return el;
     } else {
-      return el?.title.toLowerCase().includes(props.searchInput);
+      return el?.title?.toLowerCase().includes(props.searchInput);
     }
   });
 

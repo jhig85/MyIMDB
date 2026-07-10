@@ -3,6 +3,7 @@ import StyledMovieList from './MovieList.styled';
 import { get } from '../utils/utils';
 import { imdbUrl } from '../utils/config';
 import { Link } from 'react-router-dom';
+import NoImageAvailable from '../images/no-image-available.webp';
 
 interface MovieListState {
   vote_average: number;
@@ -31,7 +32,7 @@ function MovieList(props: any) {
     if (props.searchInput === '') {
       return el;
     } else {
-      return el?.title.toLowerCase().includes(props.searchInput);
+      return el?.title?.toLowerCase().includes(props.searchInput);
     }
   });
 
@@ -40,13 +41,24 @@ function MovieList(props: any) {
 
   const loadMoreMovies = () => setInitialMovies(initialMovies + 6);
 
+  const moviePoster = (movie: any) => {
+    if (
+      movie.poster_path === null ||
+      movie.poster_path === '' ||
+      movie.poster_path === undefined
+    ) {
+      return NoImageAvailable;
+    }
+    return imdbUrl + movie.poster_path;
+  };
+
   return (
     <StyledMovieList>
       {filteredData &&
         filteredData.slice(0, initialMovies).map((movie: any, i) => (
           <div className="movie" key={i}>
             <Link to={'#'} className="movie-link">
-              <img src={imdbUrl + movie.poster_path} alt={movie.overview} />
+              <img src={moviePoster(movie)} alt={movie.overview} />
               <div className="movie-content-container">
                 <h4 className="movie-title">{movie.title}</h4>
                 <div className="rating">Rating: {getRating[i]}</div>

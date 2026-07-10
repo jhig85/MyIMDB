@@ -21,7 +21,7 @@ const Home = () => {
   }, []);
 
   let inputHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    var lowerCase = e.target.value.toLowerCase();
+    var lowerCase = e.target?.value?.toLowerCase();
 
     setSearchInput(lowerCase);
   };
